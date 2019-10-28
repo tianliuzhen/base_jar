@@ -1,0 +1,5 @@
+<root>
+    <item name='java.lang.Object java.lang.Object clone()'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
