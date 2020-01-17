@@ -2,6 +2,7 @@ package com.aaa.base_jar.test;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -13,24 +14,24 @@ import java.util.List;
  */
 public class test {
     public static void main(String[] args) throws CloneNotSupportedException, IOException, ClassNotFoundException {
-        List<dto> list=new ArrayList<>();
+        List<dto> list=new ArrayList();
         dto d=new dto();
-        d.setAge(11);
-        d.setName("name");
+        d.setAge(1);
+        d.setName("45.6");
         list.add(d);
-      /*  dto d2=new dto();
-        d2.setAge(12);
-        d2.setName("name2");
-        list.add(d2);*/
-        List<dto> list2=deepCopy(list);
-          change(list);
-        for (dto dto : list2) {
-            System.out.println(dto.getName());
-        }
+        dto d2=new dto();
+        d2.setAge(2);
+        d2.setName("67.47");
+        list.add(d2);
+        dto d3=new dto();
+        d3.setAge(3);
+        d3.setName("17.73");
+        list.add(d3);
+        list.sort(Comparator.comparing(dto::getName));
     }
     public static void change(List<dto> dtos){
         System.out.println("--------");
-        List<dto> dtosw=new ArrayList<>();
+        List<dto> dtosw=new ArrayList();
         dtos.get(0).setName("tom");
         dtos.get(0).setAge(100);
         for (dto dto : dtosw) {

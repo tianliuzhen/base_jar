@@ -29,6 +29,7 @@ public class A implements Cloneable {
         name=new String();
     }
 
+    @Override
     public Object clone() {
         A o = null;
         try {
